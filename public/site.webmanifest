@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Smart parking system",
+  "short_name": "Sps",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F53838",
+  "description": "Smart parking system.",
+  "icons": [
+    {
+      "src": "/favicon/favicon.ico",
+      "sizes": "36x36",
+      "type": "image/ico"
+    }
+  ]
+}
