@@ -7,7 +7,7 @@ import Features from "../components/Features";
 export default function Home() {
   return (
     <>
-      <SeoHead title="LaslesVPN Landing Page" />
+      <SeoHead title="Smart parking system" />
       <Layout>
         <Hero />
         <Place />
