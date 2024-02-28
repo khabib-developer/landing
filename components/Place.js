@@ -4,13 +4,13 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 
 const features = [
-  "Hospitals & Medical centres",
-  "Leisure & Tourism",
-  "Hotel & Hospitality",
-  "Restaurants & Pubs",
-  "Supermarkets",
-  "Universities & Education",
-  "Shopping centres & Retail",
+  "Kasalxonalar va tibbiyot markazlari",
+  "Dam olish va turizm",
+  "Mehmonxona va mehmondo'stlik",
+  "Restoranlar va pablar",
+  "Supermarketlar",
+  "Universitetlar va ta'lim",
+  "Savdo markazlari va chakana savdo",
 ];
 
 const Place = () => {
@@ -39,14 +39,15 @@ const Place = () => {
             className="flex flex-col items-end justify-center ml-auto w-full lg:w-9/12"
             variants={scrollAnimation}
           >
-            <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
-              We provide tailored parking solutions across multiple sectors
+            <h3 className="text-xl lg:text-3xl font-medium leading-relaxed text-black-600">
+              Biz bir nechta sektorlar bo'ylab moslashtirilgan parking tizimini
+              taklif qilamiz
             </h3>
 
             <ul className="text-black-500 self-start list-inside ml-8 pt-2">
               {features.map((feature, index) => (
                 <motion.li
-                  className="relative circle-check custom-list"
+                  className="relative circle-check custom-list pb-2"
                   custom={{ duration: 2 + index }}
                   variants={scrollAnimation}
                   key={feature}

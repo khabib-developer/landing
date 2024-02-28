@@ -30,10 +30,28 @@ const Header = () => {
               // className="!w-8"
             />
           </div>
-          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
+          <ul className="hidden lg:flex justify-end text-black-500  items-center">
             <LinkScroll
               activeClass="active"
-              to={"about"}
+              to={"home"}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("home");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "home"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 a")
+              }
+            >
+              Bosh sahifa
+            </LinkScroll>
+            <LinkScroll
+              activeClass="active"
+              to="about"
               spy={true}
               smooth={true}
               duration={1000}
@@ -44,10 +62,10 @@ const Header = () => {
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "about"
                   ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
+                  : " text-black-500 hover:text-orange-500 ")
               }
             >
-              About
+              Asosiy xususiyatlar
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -56,16 +74,16 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("place");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
+                (activeLink === "place"
                   ? " text-orange-500 animation-active "
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              Places
+              Dastur
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -83,26 +101,11 @@ const Header = () => {
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              Features
+              Bizning jamoa
             </LinkScroll>
-            <div
-              className={
-                `px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative` +
-                (router.pathname === "/order"
-                  ? " text-orange-500 animation-active"
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              {/* <Link href="/order"> */}
-              Order
-              {/* </Link> */}
-            </div>
           </ul>
-          <div
-            onClick={() => router.push("/order")}
-            className="col-start-10 col-end-12 font-medium flex justify-end items-center"
-          >
-            <ButtonOutline>Get Started</ButtonOutline>
+          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+            <ButtonOutline>Biz haqimizda</ButtonOutline>
           </div>
         </nav>
       </header>
@@ -141,7 +144,7 @@ const Header = () => {
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              About
+              Biz haqimizda
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -173,20 +176,20 @@ const Header = () => {
                   d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                 />
               </svg>
-              Place
+              Asosiy xususiyatlar
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="features"
+              to="place"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("pricing");
+                setActiveLink("place");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "pricing"
+                (activeLink === "place"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent ")
               }
@@ -195,22 +198,30 @@ const Header = () => {
                 className="w-6 h-6"
                 src="https://img.icons8.com/?size=512&id=83240&format=png"
               />
-              Features
+              Dastur
             </LinkScroll>
-            <div
+            <LinkScroll
+              activeClass="active"
+              to="team"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("team");
+              }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (router.pathname === "/order"
+                (activeLink === "team"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent ")
               }
             >
               <img
                 className="w-6 h-6"
-                src="	https://img.icons8.com/?size=512&id=59857&format=png"
+                src="https://img.icons8.com/?size=512&id=83240&format=png"
               />
-              Order
-            </div>
+              Bizning jamoa
+            </LinkScroll>
           </ul>
         </div>
       </nav>

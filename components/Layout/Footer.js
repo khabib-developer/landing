@@ -1,8 +1,5 @@
 import React from "react";
 import logo from "../../public/assets/logo.png";
-import Facebook from "../../public/assets/Icon/facebook.svg";
-import Twitter from "../../public/assets/Icon/twitter.svg";
-import Instagram from "../../public/assets/Icon/instagram.svg";
 const Footer = () => {
   return (
     <div className="bg-white-300 pt-10 pb-5">
@@ -15,14 +12,16 @@ const Footer = () => {
         </div>
 
         <div className="flex">
+          <a href="tel:++998993825423" className="mx-2 p-2 ">
+            +998 (99) 382-5423
+          </a>
           <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-            <Facebook className="h-6 w-6" />
-          </div>
-          <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-            <Twitter className="h-6 w-6" />
-          </div>
-          <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-            <Instagram className="h-6 w-6" />
+            <a href="mailto:ilyasxoja.jumaniyazov@gmail.com">
+              <img
+                className="h-6 w-6"
+                src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              />
+            </a>
           </div>
         </div>
       </div>
