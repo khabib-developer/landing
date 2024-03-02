@@ -30,7 +30,7 @@ const features = [
 const team = [
   {
     title: "ILYASKHOJA",
-    descr: "Loyiha boshlig'i",
+    descr: "Loyiha rahbari",
     image: "/assets/img1.png",
   },
   {
