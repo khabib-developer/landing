@@ -47,7 +47,10 @@ const Hero = ({
             {/* <ButtonPrimary>Boshlash</ButtonPrimary> */}
           </div>
           <div className="flex w-full">
-            <motion.div className="h-full w-full" variants={scrollAnimation}>
+            <motion.div
+              className="h-full w-full flex items-center"
+              variants={scrollAnimation}
+            >
               <img
                 src="/assets/parking.png"
                 alt="VPN Illustrasi"
