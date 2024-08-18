@@ -1,7 +1,7 @@
 "use client";
 import { DriverProfileHeader } from "../Layout/DriverProfileHeader";
 import { useAuthHook } from "../../hooks/auth.hook";
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import { Loader } from "../../common/loader";
 
 export const DriverProfile = () => {

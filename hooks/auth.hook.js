@@ -1,4 +1,4 @@
-import { useCallback } from "react/cjs/react.development";
+import { useCallback } from "react";
 import { useAxios } from "./http.hook";
 import { useAppStore } from "../store";
 import { useRouter } from "next/router";
@@ -37,8 +37,8 @@ export const useAuthHook = () => {
     }
     localStorage.setItem("token", result.response.token);
     setUser({
-      username: result.response.username,
-      email: result.response.email,
+      username: result.response.user.username,
+      email: result.response.user.email,
     });
     router.push("/profile");
   }, []);
