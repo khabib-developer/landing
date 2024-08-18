@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAppStore } from "../store/index.js";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "/api";
 
 export const useAxios = () => {
   const { setLoading, setError } = useAppStore();
@@ -11,7 +11,6 @@ export const useAxios = () => {
     body,
     headers = {},
     defaultLoader = true,
-    error = true,
     withCredentials = true
   ) => {
     try {
@@ -27,14 +26,14 @@ export const useAxios = () => {
         config.data = body;
       }
       const res = await axios(config);
-      return res.data;
+      return { error: null, response: res.data };
     } catch (err) {
-      if (err.response.status === 401) return unAuthenticated;
       setLoading(false);
-      if (err.response && error)
-        setError(err.response.data.message || "something went wrong");
-      else if (error) setError("something went wrong");
-      return false;
+      console.log(err);
+      return {
+        error: err,
+        response: null,
+      };
     } finally {
       defaultLoader && setLoading(false);
     }
