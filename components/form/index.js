@@ -12,7 +12,9 @@ export const LoginForm = ({ login }) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onTouched",
+  });
 
   const { checkFunction } = useAuthHook();
   const router = useRouter();
